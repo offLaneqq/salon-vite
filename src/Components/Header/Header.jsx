@@ -52,7 +52,7 @@ const Header = () => {
           ) : null}
           <div className="flex gap-10 justify-end fixed right-16 top-3 text-3xl">
             <i className="fab fa-facebook-f facebook text-blue-700 hover:text-white hover:bg-blue-700 w-9 h-9 rounded-full pl-2 pt-1" />
-            <i className="fab fa-instagram instagram" />
+            <i className="fab fa-instagram instagram text-white hover:text-pink-400 hover:bg-white w-9 h-9 rounded-full pl-1 pt-1" />
             <i className="fab fa-twitter twitter" />
           </div>
         </div>

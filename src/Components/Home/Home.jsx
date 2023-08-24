@@ -1,14 +1,31 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
+import Carousel from "./Carousel";
+// import video from "../../assets/videoq.mp4"
+
+const slides = [
+  { id: 1, link: "https://i.ibb.co/sFtSpNL/Raichel-003-min.jpg" },
+  { id: 2, link: "https://i.ibb.co/L8SXsjp/1637771878315881.jpg" },
+  { id: 3, link: "https://i.ibb.co/qDb30Xd/1616585484517317.jpg" },
+  {
+    id: 4,
+    link: "https://i.ibb.co/nk2nR94/6725f94a3f53254d61bf8b5efbbc0529-orig.jpg",
+  },
+];
 
 const Home = () => {
   return (
-    <div className="flex">
-      <img
-        src="./src/assets/salon-main.jpg"
-        alt=""
-        className=" max-w-[62%] my-16 mx-2"
-      />
+    <div className="flex w-full">
+
+      {/* Carousel */}
+      <div className="flex mt-16 mx-2">
+        <Carousel autoSlide={true}>
+          {slides.map((s) => (
+            <img src={s.link} key={s.id} />
+          ))}
+        </Carousel>
+      </div>
+
       <div className="my-auto">
         <h1 className="text-3xl text-center my-4 font-bold">
           Штори у Тернополі на замовлення в салоні штор Руслана
