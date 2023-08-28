@@ -29,10 +29,10 @@ const Branding = () => {
           return (
             <div className="flex space-x-16 items-center py-4 border-b-4">
               <div >
-                <h1 className="text-4xl text-end ml-10">{value.id}</h1>
+                <h1 className="text-4xl text-end ml-10 font-bold">{value.id}</h1>
               </div>
               <div className="flex-col">
-                <h2>{value.heading}</h2>
+                <h2 className="text-2xl font-bold pb-2">{value.heading}</h2>
                 <p>{value.description}</p>
               </div>
             </div>
