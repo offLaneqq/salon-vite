@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+// import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { useState } from "react";
 
 const Header = () => {
@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="bg-amber-500 py-2 fixed w-full">
+      <header className="bg-amber-500 py-2 fixed w-full z-50">
         <div className="flex justify-center mx-6">
           <div className="cursor-pointer">
             <img
@@ -21,29 +21,29 @@ const Header = () => {
               onClick={() => setNavbar(!navbar)}
             />
           </div>
-          {navbar ? (
+          {!navbar ? (
             <div className="text-2xl flex">
               <ul className="flex mx-9 gap-9">
                 <li>
-                  <Link to="/">Home</Link>
+                  <Link to="/">Головна</Link>
                 </li>
                 <li>
-                  <Link to="/pages">Pages</Link>
+                  <Link to="/pages">Сторінки</Link>
                 </li>
                 <li>
-                  <Link to="/blog">Blog</Link>
+                  <Link to="/blog">Блог</Link>
                 </li>
                 <li>
-                  <Link to="/portfolio">Portfolio</Link>
+                  <Link to="/portfolio">Портфоліо</Link>
                 </li>
                 <li>
-                  <Link to="/shop">Shop</Link>
+                  <Link to="/shop">Магазин</Link>
                 </li>
                 <li>
-                  <Link to="/contact">Contact</Link>
+                  <Link to="/contact">Контакти</Link>
                 </li>
                 <li>
-                  <SearchOutlinedIcon />
+                  {/* <SearchOutlinedIcon /> */}
                   {/* <WorkIcon />
                 <GridViewIcon /> */}
                 </li>
