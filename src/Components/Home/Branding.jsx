@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
+import { useEffect, useState } from "react";
 
 const data = [
   {
@@ -21,13 +22,44 @@ const data = [
 ];
 
 const Branding = () => {
+
+  const [animate, setAnimate] = useState([]);
+
+  useEffect(() => {
+    const divs = document.querySelectorAll(".floating-div");
+    const floatingDiv = Array.from(divs);
+
+    function isElementInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+      );
+    }
+
+    function handleScroll() {
+      floatingDiv.forEach((div, index) => {
+        if (isElementInViewport(div) && !animate.includes(index)) {
+          setAnimate((prev) => [...prev, index]);
+        }
+      });
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [animate]);
+
   return (
     <section>
       <div className="bg-white w-[65%] mx-auto my-14 rounded-2xl p-10">
-        <p className="text-6xl text-center pb-7">Ми припонуємо:</p>
-        {data.map((value) => {
+        <p className="text-6xl text-center pb-7">Ми пропонуємо:</p>
+        {data.map((value, index) => {
           return (
-            <div className="flex space-x-16 items-center py-4 border-b-4">
+            <div key={index} className={`flex space-x-16 items-center py-4 border-b-4 hover:bg-purple-dark 
+              hover:text-white rounded-xl floating-div ${animate.includes(index) ? 'animate-slide' : 'invisible'}`}>
               <div >
                 <h1 className="text-4xl text-end ml-10 font-bold">{value.id}</h1>
               </div>
