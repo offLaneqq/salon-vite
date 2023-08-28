@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="bg-amber-500 py-2 fixed w-full z-50">
+      <header className="py-2 bg-header fixed w-full z-50 text-light-brown">
         <div className="flex justify-center mx-6">
           <div className="cursor-pointer">
             <img
@@ -22,7 +22,7 @@ const Header = () => {
             />
           </div>
           {!navbar ? (
-            <div className="text-2xl flex">
+            <div className="text-2xl flex ">
               <ul className="flex mx-9 gap-9">
                 <li>
                   <Link to="/">Головна</Link>
