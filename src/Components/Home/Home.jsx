@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <div className="flex w-full">
       {/* Carousel */}
-      <div className="flex mt-16 mx-2 border-2 border-white border-double">
+      <div className="flex mt-16 mx-2 border-8 border-purple-light border-double">
         <Carousel autoSlide={true}>
           {slides.map((s) => (
             <img src={s.link} key={s.id} />
